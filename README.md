@@ -33,6 +33,9 @@ this.airPlayAvailable.remove()
   AirPlay.startScan();
   
   AirPlay.disconnect();
+
+    // show volume window
+  AirPlay.showVolume()
 ```
 
 ### Create AirPlay Button
@@ -48,4 +51,4 @@ Note: The AirPlay Button does not show in the simulator
 
 ## Author
 
-Nadia Dillon
+Reaction Club 
