@@ -35,7 +35,7 @@ RCT_EXPORT_METHOD(startScan)
          name:AVAudioSessionRouteChangeNotification
          object:[AVAudioSession sharedInstance]];
     }
-    
+
     [self sendEventWithName:@"airplayAvailable" body:@{@"available": @(isAvailable)}];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self isAvailable];
@@ -47,6 +47,27 @@ RCT_EXPORT_METHOD(disconnect)
     printf("disconnect Airplay");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self sendEventWithName:@"airplayAvailable" body:@{@"available": @(false) }];
+}
+
+RCT_EXPORT_METHOD(showVolume)
+{
+  printf("Show Volume window");
+
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
+    volumeView.showsVolumeSlider = true;
+    [volumeView sizeToFit];
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [viewController.view addSubview:volumeView];
+
+    for ( UIView* subview in volumeView.subviews ) {
+        if ( [subview isKindOfClass:[UIButton class]] ) {
+            UIButton *button = subview;
+          [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+
+    [volumeView removeFromSuperview];
+
 }
 
 
