@@ -2,7 +2,8 @@
 #import "RNAirplayManager.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
-
+#import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation RNAirplay
 @synthesize bridge = _bridge;
