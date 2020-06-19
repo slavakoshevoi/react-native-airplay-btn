@@ -1,12 +1,12 @@
 
 Pod::Spec.new do |s|
   s.name         = "RNAirplay"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "RNAirplay"
   s.description  = <<-DESC
                   RNAirplay
                    DESC
-  s.homepage     = ""
+  s.homepage     = "https://github.com/slavakoshevoi/react-native-airplay-btn.git"
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "author" => "author@domain.cn" }
@@ -21,4 +21,3 @@ Pod::Spec.new do |s|
 
 end
 
-  

@@ -3,14 +3,14 @@ AirPlay library for iOS
 
 ## Installation with Automatic Linking
 ```js
-npm i react-native-airplay-btn --save
+npm i react-native-reaction-airplay --save
 react-native link
 ```
 
 ### How to create listeners
 
 ```js
-import { AirPlayListener } from react-native-airplay-btn
+import { AirPlayListener } from 'react-native-reaction-airplay';
 
 this.airPlayAvailable = AirPlayListener.addListener('airplayAvailable', devices => this.setState({
       airPlayAvailable: devices.available,
@@ -34,14 +34,14 @@ this.airPlayAvailable.remove()
   
   AirPlay.disconnect();
 
-    // show volume window
+  // show window for select cast-receiver without button, programmatically
   AirPlay.showVolume()
 ```
 
 ### Create AirPlay Button
 
 ```js
-import { AirPlayButton } from 'react-native-airplay-btn';
+import { AirPlayButton } from 'react-native-reaction-airplay';
 
 <Button style={{ height: 30, width: 30, justifyContent: 'center', alignItems:'center' }} />
 ```
